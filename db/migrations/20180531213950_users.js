@@ -4,7 +4,7 @@ exports.up = function(knex, Promise) {
       table.increments()
       table.string('f_name');
       table.string('l_name');
-      table.integer('phone_num');
+      table.string('phone_num');
       table.string('pw');
       table.timestamps(true, true);
   })
