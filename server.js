@@ -3,6 +3,10 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 8000;
 const logger = require('morgan')
+const twilio = require('twilio');
+require('dotenv').load();
+
+console.log(process.env.TWILIO_ACCOUNT_SID)
 
 app.use(logger('dev'))
 app.use(bodyParser.json())

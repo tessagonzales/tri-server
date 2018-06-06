@@ -1,5 +1,6 @@
 const users = require('../controllers/users');
 const favs = require("../controllers/favs");
+const sms_sent = require('../controllers/sms_sent')
 
 module.exports= function (app) {
 
@@ -19,6 +20,10 @@ module.exports= function (app) {
 
     app.delete('/api/favs/:id', favs.remove);
 
-    app.put('./api/favs/:id', favs.update);
+    app.put('/api/favs/:id', favs.update);
+
+    app.post('/api/message/send', sms_sent.send)
+
+
 
 } //end of export

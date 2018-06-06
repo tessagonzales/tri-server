@@ -10,9 +10,9 @@ module.exports = {
 
     create: (req, res) => {
         knex('favs').insert({
-            name: req.body.name,
-            phone_num: req.body.phone_num,
-            user_id: req.body.user_id
+            name: req.body.newContact.name,
+            phone_num: req.body.newContact.phone_num,
+            user_id: req.body.newContact.user_id
         }, "*").then(results => {
             res.json(results)
         })
