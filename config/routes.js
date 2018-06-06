@@ -15,7 +15,7 @@ module.exports = function (app) {
 
     // FAVS
     app.get('/api/favs', favs.index);
-
+    
     app.post('/api/favs', favs.create);
 
     app.delete('/api/favs/:id', favs.remove);
