@@ -25,10 +25,11 @@ module.exports = {
     },
 
     update: (req, res) => {
+        console.log(req.body)
         knex('favs').where("id", req.params.id)
             .update({
-                name: req.body.name,
-                phone_num: req.body.phone_num,
+                name: req.body.updatedContact.name,
+                phone_num: req.body.updatedContact.phone_num,
             }).returning('*').then(results => {
                 res.json(results)
             })

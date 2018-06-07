@@ -22,9 +22,12 @@ module.exports = function (app) {
 
     app.put('/api/favs/:id', favs.update);
 
-    app.post('/api/message/send', sms_dispatch.dispatchAll)
+    // SMS DISPATCHING
+    app.post('/api/message/dispatch', sms_dispatch.all)
 
+    app.post('/api/message/green/dispatch/:id', sms_dispatch.selectedGreen)
 
+    app.post('/api/message/yellow/dispatch/:id', sms_dispatch.selectedYellow)
 
 
 } //end of export

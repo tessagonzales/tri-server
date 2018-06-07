@@ -8,45 +8,65 @@ const client = new twilio(accountSid, authToken);
 
 module.exports = {
     
-    dispatchAll: (req, res) => {
+    all: (req, res) => {
 
         knex.select('phone_num').from('favs')
             .then((result) => {
                 console.log(result)
-                let promiseArr = []
+            //     let promiseArr = []
                 
-                for(let i = 0; i<result.length; i++){
-                    promiseArr.push(client.messages.create({
-                        body: `Latitude: ${req.body.region.latitude}, \n Longitude: ${req.body.region.longitude}`,
-                        to: result[i].phone_num,
-                        from: twilioNum 
-                    }))
+            //     for(let i = 0; i<result.length; i++){
+            //         promiseArr.push(client.messages.create({
+            //             body: `Latitude: ${req.body.region.latitude}, \n Longitude: ${req.body.region.longitude}`,
+            //             to: result[i].phone_num,
+            //             from: twilioNum 
+            //         }))
                        
-                }
-                Promise.all(promiseArr).then((values)=>{
-                    res.json(values);
-                })
+            //     }
+            //     Promise.all(promiseArr).then((values)=>{
+            //         res.json(values);
+            //     })
             })
     },
 
-    // selectedDispatch: (req, res) => {
-    //     knex.select('phone_num').from('favs').where('id', req.body.id)
-    //         .then((result) => {
-    //             console.log(result)
-    //             let promiseArr = []
+    selectedGreen: (req, res) => {
+        knex.select('phone_num').from('favs').where('id', req.params.id)
+            .then((result) => {
+                console.log(result)
+                // let promiseArr = []
 
-    //             for (let i = 0; i < result.length; i++) {
-    //                 promiseArr.push(client.messages.create({
-    //                     body: `Latitude: ${req.body.region.latitude}, \n Longitude: ${req.body.region.longitude}`,
-    //                     to: result[i].phone_num,
-    //                     from: twilioNum 
-    //                 }))
+                // for (let i = 0; i < result.length; i++) {
+                //     promiseArr.push(client.messages.create({
+                //         body: `Latitude: ${req.body.region.latitude}, \n Longitude: ${req.body.region.longitude}`,
+                //         to: result[i].phone_num,
+                //         from: twilioNum 
+                //     }))
 
-    //             }
-    //             Promise.all(promiseArr).then((values) => {
-    //                 res.json(values);
-    //             })
-    //         })
-    //     }
+                // }
+                // Promise.all(promiseArr).then((values) => {
+                //     res.json(values);
+                // })
+            })
+        },
+
+    selectedYellow: (req, res) => {
+        knex.select('phone_num').from('favs').where('id', req.params.id)
+            .then((result) => {
+                console.log(result)
+                // let promiseArr = []
+
+                // for (let i = 0; i < result.length; i++) {
+                //     promiseArr.push(client.messages.create({
+                //         body: `Latitude: ${req.body.region.latitude}, \n Longitude: ${req.body.region.longitude}`,
+                //         to: result[i].phone_num,
+                //         from: twilioNum
+                //     }))
+
+                // }
+                // Promise.all(promiseArr).then((values) => {
+                //     res.json(values);
+                // })
+            })
+    },
 
 } // end export
