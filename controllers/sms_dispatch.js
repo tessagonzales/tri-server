@@ -52,7 +52,7 @@ module.exports = {
     selectedYellow: (req, res) => {
         knex.select('phone_num').from('favs').where('id', req.params.id)
             .then((result) => {
-                console.log(result)
+                // console.log(result)
                 // let promiseArr = []
 
                 // for (let i = 0; i < result.length; i++) {
