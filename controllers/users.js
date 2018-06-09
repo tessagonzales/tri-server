@@ -7,6 +7,13 @@ module.exports = {
             res.json(results)
         })
     },
+    
+    login: (req, res) => {
+        
+        knex('users').then(results => {
+            res.json(results)
+        })
+    },
 
     create: (req, res) => {
         knex('users').insert({

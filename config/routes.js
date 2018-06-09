@@ -7,6 +7,8 @@ module.exports = function (app) {
     // USERS
     app.get('/api/users', users.index);
 
+    app.get('/login', users.login);
+
     app.post('/api/users', users.create);
 
     app.delete('/api/users/:id', users.remove);

@@ -13,19 +13,19 @@ module.exports = {
         knex.select('phone_num').from('favs')
             .then((result) => {
                 console.log(result)
-            //     let promiseArr = []
+                // let promiseArr = []
                 
-            //     for(let i = 0; i<result.length; i++){
-            //         promiseArr.push(client.messages.create({
-            //             body: `TRI-SOS USER has sent his/her location to all of their chosen contacts including your number. Immediate action required. Please contact USER as soon as possible. \n\n Last known location:\n ${req.body.addressRecieved} \n\n --From TRI-SOS. App not available for download. \n\n FYI - USER has been warned by TRI-SOS to dial emergency if situation is dangerous. \n\n\n DO NOT RESPOND TO THIS MESSAGE.`,
-            //             to: result[i].phone_num,
-            //             from: twilioNum 
-            //         }))
+                // for(let i = 0; i<result.length; i++){
+                //     promiseArr.push(client.messages.create({
+                //         body: `TRI-SOS USER has sent his/her location to all of their chosen contacts including your number. Immediate action required. Please contact USER as soon as possible. \n\n Last known location:\n ${req.body.addressRecieved} \n\n --From TRI-SOS. App not available for download. \n\n FYI - USER has been warned by TRI-SOS to dial emergency if situation is dangerous. \n\n\n DO NOT RESPOND TO THIS MESSAGE.`,
+                //         to: result[i].phone_num,
+                //         from: twilioNum 
+                //     }))
                        
-            //     }
-            //     Promise.all(promiseArr).then((values)=>{
-            //         res.json(values);
-            //     })
+                // }
+                // Promise.all(promiseArr).then((values)=>{
+                //     res.json(values);
+                // })
             })
     },
 
